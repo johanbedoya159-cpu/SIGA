@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ms-academico-siga/ms-academico-siga.csproj" Id="5746d035-f3fa-4aa6-8c55-edc0a2d7b6ff" />
+  <Project Path="ms-administrativo-siga/ms-administrativo-siga.csproj" Id="86b28de4-8be5-4f5c-8a83-cc29aac5ba72" />
+  <Project Path="ms-autenticacion-siga/ms-autenticacion-siga.csproj" Id="9cd71132-dfe1-4fa0-914a-191413e7d58c" />
+  <Project Path="ms-notificacion-siga/ms-notificacion-siga.csproj" Id="4bb80514-989a-4abe-aa57-b53cd7bb4052" />
+  <Project Path="ms-reportes-siga/ms-reportes-siga.csproj" Id="efe8da21-741c-4f0a-ad69-c7ba3f2c4ccc" />
+</Solution>
