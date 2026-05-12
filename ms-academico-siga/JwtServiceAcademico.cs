@@ -3,7 +3,11 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 
+<<<<<<< HEAD
 namespace ms_academico_siga
+=======
+namespace SIGAPrincipal
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
 {
     public class JwtServiceAcademico
     {

@@ -31,7 +31,11 @@ namespace SIGAPrincipal.BDAcademico
     {
         public int HistorialAcademicoId { get; set; }
         public int AsignaturaId { get; set; } 
+<<<<<<< HEAD
         public string? NombreAsignatura { get; set; }
+=======
+        public string NombreAsignatura { get; set; }
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
         public int CreditosAsignatura { get; set; }
         public int Cupos { get; set; }
     }
@@ -40,7 +44,11 @@ namespace SIGAPrincipal.BDAcademico
     {
         public int EstudianteId { get; set; } 
         public int UsuarioId { get; set; } 
+<<<<<<< HEAD
         public string? CodigoEstudiante { get; set; }
+=======
+        public string CodigoEstudiante { get; set; }
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
         public int ProgramaId { get; set; } 
     }
 
@@ -75,7 +83,11 @@ namespace SIGAPrincipal.BDAcademico
     public class Periodo
     {
         public int PeriodoId { get; set; }
+<<<<<<< HEAD
         public string? NombrePeriodo { get; set; }
+=======
+        public string NombrePeriodo { get; set; }
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
         public bool Estado { get; set; }
     }
 
@@ -91,8 +103,13 @@ namespace SIGAPrincipal.BDAcademico
     {
         public int HorarioId { get; set; }
         public int GrupoId { get; set; } 
+<<<<<<< HEAD
         public string? Aula { get; set; }
         public string? Dia { get; set; }
+=======
+        public string Aula { get; set; }
+        public string Dia { get; set; }
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
         public TimeSpan HoraInicio { get; set; }
         public TimeSpan HoraFin { get; set; }
     }
@@ -102,7 +119,11 @@ namespace SIGAPrincipal.BDAcademico
         public int GrupoId { get; set; }
         public int DocenteId { get; set; } 
         public int AsignaturaId { get; set; } 
+<<<<<<< HEAD
         public string? NombreGrupo { get; set; }
+=======
+        public string NombreGrupo { get; set; }
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
         public int HorarioId { get; set; } 
     }
 
@@ -110,12 +131,20 @@ namespace SIGAPrincipal.BDAcademico
     {
         public int DocenteId { get; set; } 
         public int UsuarioId { get; set; } 
+<<<<<<< HEAD
         public string? Especialidad { get; set; }
+=======
+        public string Especialidad { get; set; }
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
     }
 
     public class Programa
     {
         public int ProgramaId { get; set; }
+<<<<<<< HEAD
         public string? NombrePrograma { get; set; }
+=======
+        public string NombrePrograma { get; set; }
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
     }
 }

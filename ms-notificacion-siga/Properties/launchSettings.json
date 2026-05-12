@@ -1,11 +1,18 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
+<<<<<<< HEAD
   "defaultProfile": "http",
+=======
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
+<<<<<<< HEAD
       "applicationUrl": "http://localhost:49317",
+=======
+      "applicationUrl": "http://localhost:32624",
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
       "sslPort": 44374
     }
   },
@@ -15,7 +22,11 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
+<<<<<<< HEAD
       "applicationUrl": "http://localhost:5114",
+=======
+      "applicationUrl": "http://localhost:5064",
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -25,7 +36,11 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
+<<<<<<< HEAD
       "applicationUrl": "https://localhost:7058;http://localhost:5114",
+=======
+      "applicationUrl": "https://localhost:7127;http://localhost:5064",
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -39,4 +54,8 @@
       }
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543

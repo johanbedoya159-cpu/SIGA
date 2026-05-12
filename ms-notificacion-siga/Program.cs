@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ══════════════════════════════════════════════════════════════════════════
 // Program.cs  ─  ms-notificacion-siga   (también sirve como base para
 //                                        ms-reportes-siga cambiando el título)
@@ -64,3 +65,30 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+=======
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
+>>>>>>> c80eabf6817f70b31baafaa58ab5833a2c24b543
