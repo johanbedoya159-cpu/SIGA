@@ -1,0 +1,66 @@
+// ══════════════════════════════════════════════════════════════════════════
+// Program.cs  ─  ms-notificacion-siga   (también sirve como base para
+//                                        ms-reportes-siga cambiando el título)
+// ══════════════════════════════════════════════════════════════════════════
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using SIGAPrincipal.BDNotificacion;
+using System.Text;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// ─── EF Core ───────────────────────────────────────────────────────────────
+builder.Services.AddDbContext<DataNotificacion>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("BDNotificacion")));
+
+// ─── JWT ───────────────────────────────────────────────────────────────────
+var jwt = builder.Configuration.GetSection("Jwt");
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwt["Issuer"],
+            ValidAudience = jwt["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(
+                                           Encoding.UTF8.GetBytes(jwt["Key"]!))
+        };
+    });
+
+builder.Services.AddAuthorization();
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "SIGA - Notificaciones", Version = "v1" });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        { new OpenApiSecurityScheme { Reference = new OpenApiReference
+            { Type = ReferenceType.SecurityScheme, Id = "Bearer" } }, Array.Empty<string>() }
+    });
+});
+
+var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
